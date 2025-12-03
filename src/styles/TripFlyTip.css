@@ -1,0 +1,281 @@
+.trip-overview {
+  padding: var(--space-20);
+  min-height: 1vh;
+  font-family: var(--font-family-base);
+}
+
+/* 班機資訊區 */
+.flight-section {
+  margin-bottom: var(--space-32);
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-slate-900);
+  margin-bottom: var(--space-20);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* 班機卡片 */
+.flight-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  padding: var(--space-16);
+  margin-bottom: var(--space-16);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.flight-card:hover {
+  transform: translateY(-2px);
+}
+
+.flight-card.outbound {
+  border-left: 4px solid #FFB3D9;
+}
+
+.flight-card.return {
+  border-left: 4px solid #B4D4FF;
+}
+
+.flight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.flight-direction {
+  background: #FFB3D9;
+  color: white;
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.flight-card.return .flight-direction {
+  background: #B4D4FF;
+}
+
+.flight-airline {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+}
+
+.flight-details {
+  margin-bottom: var(--space-16);
+}
+
+.flight-leg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.airport-info {
+  flex: 1;
+  text-align: center;
+}
+
+.airport-info .departureTime{
+  color: var(--warm-orange);
+}
+
+.airport-code {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.airport-name {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.time {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-4);
+}
+
+.flight-route {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.plane-icon {
+  font-size: var(--font-size-3xl);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.duration {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  background: var(--color-secondary);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+}
+
+.flight-number {
+  text-align: right;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 必須攜帶區 */
+.packing-section {
+  margin-bottom: var(--space-32);
+}
+
+.packing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.packing-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.packing-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.category-icon {
+  font-size: var(--font-size-2xl);
+}
+
+.category-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.packing-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.packing-item:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  font-size: var(--font-size-lg);
+}
+
+.item-text {
+  flex: 1;
+}
+
+/* 溫馨提示 */
+.tips-section {
+  margin-top: var(--space-32);
+}
+
+.tip-card {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE6F0 100%);
+  border-left: 4px solid #F0A77D;
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  display: flex;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.tip-icon {
+  font-size: var(--font-size-2xl);
+  flex-shrink: 0;
+}
+
+.tip-card p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .trip-overview {
+    padding: var(--space-12);
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .flight-leg {
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .airport-info {
+    width: 100%;
+  }
+
+  .packing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flight-card {
+    padding: var(--space-12);
+  }
+
+  .packing-card {
+    padding: var(--space-12);
+  }
+}
