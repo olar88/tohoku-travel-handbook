@@ -1,6 +1,6 @@
 import { useState, type JSX } from 'react';
 import CoverPage from './components/CoverPage';
-import TripOverview from './components/TripOverview';
+// import TripOverview from './components/TripOverview';
 import DayCard from './components/DayCard';
 import Navigation from './components/Navigation';
 import PageIndicator from './components/PageIndicator';
