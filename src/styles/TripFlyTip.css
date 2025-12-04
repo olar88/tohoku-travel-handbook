@@ -2,6 +2,7 @@
   padding: var(--space-20);
   min-height: 1vh;
   font-family: var(--font-family-base);
+  overflow-x: auto;
 }
 
 /* 班機資訊區 */
@@ -224,6 +225,7 @@
 /* 溫馨提示 */
 .tips-section {
   margin-top: var(--space-32);
+  margin-bottom: 150px;
 }
 
 .tip-card {
