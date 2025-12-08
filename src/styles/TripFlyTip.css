@@ -2,6 +2,8 @@
   padding: var(--space-20);
   min-height: 1vh;
   font-family: var(--font-family-base);
+  overflow-y: auto;
+  margin-bottom: 10rem;
 }
 
 /* 班機資訊區 */
@@ -85,7 +87,7 @@
   text-align: center;
 }
 
-.airport-info .departureTime{
+.airport-info .departureTime {
   color: var(--warm-orange);
 }
 
@@ -128,8 +130,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .duration {
@@ -142,7 +151,7 @@
 
 .flight-number {
   text-align: right;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
 }
@@ -251,7 +260,7 @@
 /* 響應式設計 */
 @media (max-width: 768px) {
   .trip-overview {
-    padding: var(--space-12);
+    padding: 50px var(--space-12);
   }
 
   .section-title {

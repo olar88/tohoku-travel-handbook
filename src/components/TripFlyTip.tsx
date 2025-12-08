@@ -8,7 +8,7 @@ interface TripFlyTipProps {
 }
 
 export default function TripFlyTip({ data }: TripFlyTipProps) {
- 
+
 
   return (
     <div className="trip-overview">
@@ -38,7 +38,6 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
 
               <div className="flight-route">
                 <div className="plane-icon">✈️</div>
-                <div className="duration">{data.flights.outbound.duration}</div>
               </div>
 
               <div className="airport-info">
@@ -51,7 +50,7 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
           </div>
 
           <div className="flight-number">
-            班機編號: {data.flights.outbound.flightNumber}
+            班機編號: <span className="text-[#FFA07A]">{data.flights.outbound.flightNumber}</span>
           </div>
         </div>
 
@@ -75,7 +74,6 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
 
               <div className="flight-route">
                 <div className="plane-icon">✈️</div>
-                <div className="duration">{data.flights.return.duration}</div>
               </div>
 
               <div className="airport-info">
@@ -88,7 +86,7 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
           </div>
 
           <div className="flight-number">
-            班機編號: {data.flights.return.flightNumber}
+            班機編號: <span className="text-[#FFA07A]">{data.flights.return.flightNumber}</span>
           </div>
         </div>
       </div>
@@ -109,8 +107,8 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
                 {category.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="packing-item">
                     <span className="checkbox">
-                      <img src='/checkIcon.png' alt="" width={20} height={20}/>
-                       </span>
+                      <img src='/checkIcon.png' alt="" width={20} height={20} />
+                    </span>
                     <span className="item-text">{item}</span>
                   </li>
                 ))}

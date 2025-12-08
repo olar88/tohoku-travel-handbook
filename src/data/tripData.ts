@@ -61,56 +61,56 @@ export const tripData = {
     },
     transport: "JR鐵路 & 自駕",
     packingList: [
-    {
-      category: "證件",
-      icon: "💳️",
-      items: ["護照", "台灣駕照 (國際駕照)", "健保卡", "信用卡/現金"],
-    },
-    {
-      category: "衣著",
-      icon: "🧥",
-      items: [
-        "羽絨衣",
-        "厚毛衣",
-        "加熱衣",
-        "厚褲子",
-        "雪靴",
-        "厚襪子",
-        "手套",
-        "圍巾",
-        "毛帽",
-      ],
-    },
-    {
-      category: "保暖用品",
-      icon: "❄️",
-      items: ["暖暖包", "保溫杯", "口罩", "護唇膏"],
-    },
-    {
-      category: "盥洗用品",
-      icon: "🧴",
-      items: [
-        "保濕乳液",
-        "護手霜",
-        "唇膏",
-        "防曬乳",
-        "牙刷牙膏",
-        "洗面乳",
-        "化妝品",
-      ],
-    },
-    {
-      category: "其他必需品",
-      icon: "🎒",
-      items: [
-        "行充",
-        "手機充電線",
-        "藥品 (感冒藥、腸胃藥)",
-        "墨鏡❗❗",
-        "自拍桿",
-      ],
-    },
-  ],
+      {
+        category: "證件",
+        icon: "💳️",
+        items: ["護照", "台灣駕照 (國際駕照)", "健保卡", "信用卡/現金"],
+      },
+      {
+        category: "衣著",
+        icon: "🧥",
+        items: [
+          "羽絨衣",
+          "厚毛衣",
+          "加熱衣",
+          "厚褲子",
+          "雪靴",
+          "厚襪子",
+          "手套",
+          "圍巾",
+          "毛帽",
+        ],
+      },
+      {
+        category: "保暖用品",
+        icon: "❄️",
+        items: ["暖暖包", "保溫杯", "口罩", "護唇膏"],
+      },
+      {
+        category: "盥洗用品",
+        icon: "🧴",
+        items: [
+          "保濕乳液",
+          "護手霜",
+          "唇膏",
+          "防曬乳",
+          "牙刷牙膏",
+          "洗面乳",
+          "化妝品",
+        ],
+      },
+      {
+        category: "其他必需品",
+        icon: "🎒",
+        items: [
+          "行充",
+          "手機充電線",
+          "藥品 (感冒藥、腸胃藥)",
+          "墨鏡❗❗",
+          "自拍桿",
+        ],
+      },
+    ],
   },
 
   days: [
@@ -119,6 +119,7 @@ export const tripData = {
       date: "2026年1月8日(四)",
       title: "抵達青森 🛬",
       accommodation: "Art Hotel",
+      accommodationGoogleMap: "https://maps.app.goo.gl/FydjxYB5Ji63ygZq9",
       highlight: "抵達日本、青森市區初探",
       activities: [
         {
@@ -155,6 +156,7 @@ export const tripData = {
       date: "2026年1月9日(五)",
       title: "冰瀑奇觀 ❄️",
       accommodation: "奧入瀨溪流飯店",
+      accommodationGoogleMap: "https://maps.app.goo.gl/zaWScprCAxtqxpdJ9",
       highlight: "十和田神社、奧入瀨溪流冰瀑燈光秀",
       activities: [
         {
@@ -196,6 +198,7 @@ export const tripData = {
       date: "2026年1月10日(六)",
       title: "樹冰與八戶 ☃️",
       accommodation: "八方餃子",
+      accommodationGoogleMap: "https://maps.app.goo.gl/8sfigkxq8sduU3UU7",
       highlight: "八甲田山樹冰、探索八戶",
       activities: [
         {
@@ -209,18 +212,18 @@ export const tripData = {
           note: "結束上午自駕",
         },
         {
-          time: "16:24",
+          time: "15:59",
           activity: "搭乘JR前往八戶",
-          note: "鐵路銜接",
+          note: "15:59 青森往新青森，16:30 新青森往八戶",
         },
         {
-          time: "17:55",
+          time: "17:30",
           activity: "抵達八戶、租車",
-          note: "車站出口租車",
+          note: "車站出口租車，先check-in",
         },
         {
           time: "18:00",
-          activity: "晚餐：八方餃子、串乃助",
+          activity: "晚餐：八方餃子、串乃助(串燒)",
           note: "入住的餃子館本身也是知名美食！",
         },
         {
@@ -240,19 +243,32 @@ export const tripData = {
     {
       day: 4,
       date: "2026年1月11日(日)",
-      title: "盛岡美食 🍜",
-      accommodation: "盛岡飯店",
-      highlight: "盛岡市區、小岩井農場",
+      title: "八食中心 🍣 ，盛岡之旅",
+      accommodation: "大和魯內酒店",
+      accommodationGoogleMap: "https://maps.app.goo.gl/9f3eKhFumJ4z6Dwe7",
+      highlight: "八食中心、盛岡蕎麥麵 🍜",
       activities: [
         {
           time: "09:00",
-          activity: "前往小岩井農場",
-          note: "自駕前往",
+          activity: "八食中心",
+          note: "自駕前往八食中心，品嚐新鮮生魚片🍣",
         },
         {
           time: "12:00",
-          activity: "午餐：鐮倉 GyuGyu 涮涮鍋",
-          warning: "農場內餐廳，冬季需預約",
+          activity: "還車",
+          note: "結束上午自駕",
+          warning: "搭乘 12:16 往盛岡",
+        },
+        {
+          time: "12:45",
+          activity: "抵達盛岡",
+          note: "抵達盛岡市區，稍作休息",
+        },
+        {
+          time: "13:30",
+          activity: "小岩井農場",
+          note: "農場內午餐：鐮倉 GyuGyu 涮涮鍋",
+          warning: "冬季需預約",
         },
         {
           time: "14:00",
@@ -260,66 +276,108 @@ export const tripData = {
           note: "雪地中的牧場景緻",
         },
         {
+          time: "16:00",
+          activity: "城跡公園",
+          note: "眺望盛岡市景",
+        },
+        {
           time: "17:00",
-          activity: "飯店 Check-in",
-          note: "盛岡市區",
+          activity: "回飯店check-in",
+          note: "稍作休息",
         },
         {
           time: "18:30",
-          activity: "晚餐：盛岡冷麵",
-          note: "盛岡在地美食代表",
+          activity: "晚餐：盛岡蕎麥麵",
+          note: "盛岡在地美食代表，吃飽去超商買生魚片🍣",
+        },
+        {
+          time: "20:00",
+          activity: "晚間娛樂：Live Bar",
+          note: "現場音樂伴隨",
         },
       ],
-      icons: ["🍜", "🏕️", "❄️"],
+      icons: ["🍣", "🍜", "🐮", "❄️", "🎵"],
       reminder: "小岩井農場涮涮鍋需預約",
     },
     {
       day: 5,
-      date: "2026年1月12日(月)",
+      date: "2026年1月12日(一)",
       title: "猊鼻溪遊船 🚤",
-      accommodation: "一關飯店",
-      highlight: "猊鼻溪、一關文化",
+      accommodation: "仙台遠景酒店",
+      accommodationGoogleMap: "https://maps.app.goo.gl/T16Rhv8ecs5D6xZ18",
+      highlight: "猊鼻溪、一關文化、仙台夜晚",
       activities: [
         {
-          time: "09:30",
-          activity: "搭乘遊船遊覽猊鼻溪",
-          note: "營運時間09:30-16:30",
+          time: "08:30",
+          activity: "起床！",
+          note: "早餐時間",
         },
         {
-          time: "12:00",
-          activity: "午餐：溪邊料理",
-          note: "品嚐在地美食",
+          time: "09:30",
+          activity: "搭乘JR 往一關",
+          warning: "09:33 JR",
+        },
+        {
+          time: "10:54",
+          activity: "抵達一關",
+          note: "車站內寄放行李",
+        },
+        {
+          time: "11:00",
+          activity: "午餐時間",
+          warning: "稍作休息，找食物吃",
+        },
+        {
+          time: "13:00",
+          activity: "搭乘大船渡線",
+          warning: "13:18 大船渡線",
         },
         {
           time: "14:00",
-          activity: "繼續遊船探索",
-          note: "冬季雪景",
+          activity: "抵達猊鼻溪",
+          warning: "14:00 暖桌遊船",
         },
         {
           time: "17:00",
-          activity: "飯店 Check-in",
-          note: "一關市區",
+          activity: "搭乘大船渡線回一關",
+          warning: "17:08 大船渡線，17:37 抵達一關",
         },
         {
-          time: "18:30",
-          activity: "晚餐：在地鄉土料理",
-          note: "品嚐岩手在地風味",
+          time: "18:00",
+          activity: "搭乘JR往仙台",
+          warning: "18:12 仙台",
+        },
+        {
+          time: "18:45",
+          activity: "抵達仙台",
+          note: "抽善治郎號碼牌，飯店 check in",
+        },
+        {
+          time: "19:00",
+          activity: "晚餐：善治郎牛舌",
+          note: "晚餐後逛街！",
         },
       ],
-      icons: ["🚤", "⛰️", "❄️"],
+      icons: ["🚤", "⛰️", "❄️", "🥩"],
       reminder: "遊船營運時間09:30-16:30",
     },
     {
       day: 6,
       date: "2026年1月13日(二)",
       title: "狐狸村 & 藏王 🦊",
-      accommodation: "藏王溫泉飯店",
+      accommodation: "仙台遠景酒店",
+      accommodationGoogleMap: "https://maps.app.goo.gl/T16Rhv8ecs5D6xZ18",
       highlight: "宮城狐狸村、藏王溫泉",
       activities: [
+         {
+          time: "08:30",
+          activity: "起床！",
+          note: "早餐時間",
+        },
         {
-          time: "10:00",
-          activity: "前往狐狸村",
-          note: "搭乘JR前往宮城",
+          time: "09:30",
+          activity: "租車前往狐狸村",
+          note: "租車！車程約 50 min",
         },
         {
           time: "11:00",
@@ -439,5 +497,5 @@ export const tripData = {
     },
   ],
 
-  
+
 };

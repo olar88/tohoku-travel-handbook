@@ -97,43 +97,31 @@ select.form-control {
 }
 
 .status--success {
-  background-color: rgba(
-    var(--color-success-rgb, 33, 128, 141),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-success-rgb, 33, 128, 141),
+      var(--status-bg-opacity));
   color: var(--color-success);
-  border: 1px solid
-    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
 }
 
 .status--error {
-  background-color: rgba(
-    var(--color-error-rgb, 192, 21, 47),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-error-rgb, 192, 21, 47),
+      var(--status-bg-opacity));
   color: var(--color-error);
-  border: 1px solid
-    rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
 }
 
 .status--warning {
-  background-color: rgba(
-    var(--color-warning-rgb, 168, 75, 47),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-warning-rgb, 168, 75, 47),
+      var(--status-bg-opacity));
   color: var(--color-warning);
-  border: 1px solid
-    rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
 }
 
 .status--info {
-  background-color: rgba(
-    var(--color-info-rgb, 98, 108, 113),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-info-rgb, 98, 108, 113),
+      var(--status-bg-opacity));
   color: var(--color-info);
-  border: 1px solid
-    rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
 }
 
 /* Container layout */
@@ -150,16 +138,19 @@ select.form-control {
     max-width: var(--container-sm);
   }
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: var(--container-md);
   }
 }
+
 @media (min-width: 1024px) {
   .container {
     max-width: var(--container-lg);
   }
 }
+
 @media (min-width: 1280px) {
   .container {
     max-width: var(--container-xl);
@@ -170,24 +161,31 @@ select.form-control {
 .flex {
   display: flex;
 }
+
 .flex-col {
   flex-direction: column;
 }
+
 .items-center {
   align-items: center;
 }
+
 .justify-center {
   justify-content: center;
 }
+
 .justify-between {
   justify-content: space-between;
 }
+
 .gap-4 {
   gap: var(--space-4);
 }
+
 .gap-8 {
   gap: var(--space-8);
 }
+
 .gap-16 {
   gap: var(--space-16);
 }
@@ -195,16 +193,20 @@ select.form-control {
 .m-0 {
   margin: 0;
 }
+
 .mt-8 {
   margin-top: var(--space-8);
 }
+
 .mb-8 {
   margin-bottom: var(--space-8);
 }
+
 .mx-8 {
   margin-left: var(--space-8);
   margin-right: var(--space-8);
 }
+
 .my-8 {
   margin-top: var(--space-8);
   margin-bottom: var(--space-8);
@@ -213,18 +215,22 @@ select.form-control {
 .p-0 {
   padding: 0;
 }
+
 .py-8 {
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
 }
+
 .px-8 {
   padding-left: var(--space-8);
   padding-right: var(--space-8);
 }
+
 .py-16 {
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
 }
+
 .px-16 {
   padding-left: var(--space-16);
   padding-right: var(--space-16);
@@ -233,6 +239,7 @@ select.form-control {
 .block {
   display: block;
 }
+
 .hidden {
   display: none;
 }
@@ -262,21 +269,19 @@ select.form-control {
 
 @font-face {
   font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-    format('woff2');
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
 .day-card {
-  flex: 1;
+  height: 90vh;
   padding: var(--space-32);
+  padding-bottom: 200px;
   overflow-y: auto;
   animation: fadeIn calc(var(--duration-normal) * 3.2) var(--ease-standard);
-  background: linear-gradient(
-    to bottom,
-    var(--color-background),
-    var(--color-surface)
-  );
+  background: linear-gradient(to bottom,
+      var(--color-background),
+      var(--color-surface));
 }
 
 .day-header {
@@ -291,10 +296,10 @@ select.form-control {
 .day-number {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  color:var(--paper-cream);
+  color: var(--paper-cream);
   font-family: var(--font-family-base);
   letter-spacing: var(--letter-spacing-tight);
-  background:  var(--washi-tape-blue);
+  background: var(--washi-tape-blue);
   border-radius: var(--radius-full);
   padding: var(--space-6) var(--space-12);
 }
@@ -467,6 +472,7 @@ select.form-control {
     opacity: 0;
     transform: translateY(var(--space-20));
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -474,10 +480,12 @@ select.form-control {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -486,6 +494,7 @@ select.form-control {
 @media (max-height: 800px) {
   .day-card {
     padding: var(--space-24);
+    padding-bottom: 200px;
   }
 
   .day-timeline {
@@ -503,6 +512,7 @@ select.form-control {
 @media (max-width: 480px) {
   .day-card {
     padding: var(--space-16);
+    padding-bottom: 200px;
   }
 
   .day-header {
@@ -581,8 +591,7 @@ select.form-control {
   }
 
   .day-reminder {
-    padding: var(--space-12) ;
-    margin-bottom: 200px;
+    padding: var(--space-12);
     font-size: var(--font-size-sm);
     flex-direction: column;
     gap: var(--space-6);
