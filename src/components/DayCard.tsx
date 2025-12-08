@@ -13,6 +13,7 @@ interface DayCardData {
   date: string;
   title: string;
   accommodation: string;
+  accommodationGoogleMap: string;
   highlight: string;
   activities: Activity[];
   icons?: string[];
@@ -48,7 +49,7 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
       </div>
 
       <div className="day-accommodation">
-        🛏️ {data.accommodation}
+        🛏️ <a href={data.accommodationGoogleMap} target="_blank">{data.accommodation}</a>
       </div>
 
       <div className="day-highlight">
