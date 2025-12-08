@@ -292,6 +292,7 @@ select.form-control {
   text-align: center;
   z-index: 2;
   animation: fadeIn 0.8s var(--ease-standard);
+  margin-bottom: 100px
 }
 
 .cover-decorations-top {

@@ -233,6 +233,7 @@
 /* 溫馨提示 */
 .tips-section {
   margin-top: var(--space-32);
+  margin-bottom: 150px;
 }
 
 .tip-card {
