@@ -14,18 +14,18 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: '東北旅遊手札',
-        short_name: '東北旅遊手札',
+        name: '日本東北旅行簿 🍎🦊🌧️',
+        short_name: '日本東北旅行簿 🍎🦊🌧️',
         description: 'Your guide to traveling in Tohoku, Japan',
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'icon.png',
+            src: 'appIcon.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icon.png',
+            src: 'appIcon.png',
             sizes: '512x512',
             type: 'image/png'
           }
