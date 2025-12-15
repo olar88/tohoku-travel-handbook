@@ -118,6 +118,7 @@ export const tripData = {
       day: 1,
       date: "2026年1月8日(四)",
       title: "抵達青森 🛬",
+      weatherLocationId: ["aomori"],
       accommodation: "Art Hotel",
       accommodationGoogleMap: "https://maps.app.goo.gl/FydjxYB5Ji63ygZq9",
       highlight: "抵達日本、青森市區初探",
@@ -155,6 +156,7 @@ export const tripData = {
       day: 2,
       date: "2026年1月9日(五)",
       title: "冰瀑奇觀 ❄️",
+      weatherLocationId: ["oirase"],
       accommodation: "奧入瀨溪流飯店",
       accommodationGoogleMap: "https://maps.app.goo.gl/zaWScprCAxtqxpdJ9",
       highlight: "十和田神社、奧入瀨溪流冰瀑燈光秀",
@@ -197,6 +199,7 @@ export const tripData = {
       day: 3,
       date: "2026年1月10日(六)",
       title: "樹冰與八戶 ☃️",
+      weatherLocationId: ["hakkoda", "hachinohe"],
       accommodation: "八方餃子",
       accommodationGoogleMap: "https://maps.app.goo.gl/8sfigkxq8sduU3UU7",
       highlight: "八甲田山樹冰、探索八戶",
@@ -244,6 +247,7 @@ export const tripData = {
       day: 4,
       date: "2026年1月11日(日)",
       title: "八食中心 🍣 ，盛岡之旅",
+      weatherLocationId: ["hachinohe", "morioka"],
       accommodation: "大和魯內酒店",
       accommodationGoogleMap: "https://maps.app.goo.gl/9f3eKhFumJ4z6Dwe7",
       highlight: "八食中心、盛岡蕎麥麵 🍜",
@@ -303,6 +307,7 @@ export const tripData = {
       day: 5,
       date: "2026年1月12日(一)",
       title: "猊鼻溪遊船 🚤",
+      weatherLocationId: ["geibikei", "ichinoseki"],
       accommodation: "仙台遠景酒店",
       accommodationGoogleMap: "https://maps.app.goo.gl/T16Rhv8ecs5D6xZ18",
       highlight: "猊鼻溪、一關文化、仙台夜晚",
@@ -365,11 +370,12 @@ export const tripData = {
       day: 6,
       date: "2026年1月13日(二)",
       title: "狐狸村 & 藏王 🦊",
+      weatherLocationId: ["sendai", "zao"],
       accommodation: "仙台遠景酒店",
       accommodationGoogleMap: "https://maps.app.goo.gl/T16Rhv8ecs5D6xZ18",
       highlight: "宮城狐狸村、藏王溫泉",
       activities: [
-         {
+        {
           time: "08:30",
           activity: "起床！",
           note: "早餐時間",
@@ -412,6 +418,7 @@ export const tripData = {
       day: 7,
       date: "2026年1月14日(三)",
       title: "銀山溫泉古鎮 🏮",
+      weatherLocationId: ["zao", "yamagata"],
       accommodation: "銀山溫泉飯店",
       highlight: "山寺、銀山溫泉古鎮",
       activities: [
@@ -463,7 +470,8 @@ export const tripData = {
       day: 8,
       date: "2026年1月15日(四)",
       title: "返回台灣 ✈️",
-      accommodation: "N/A",
+      weatherLocationId: ["sendai"],
+      accommodation: "Sweet Home",
       highlight: "返程",
       activities: [
         {
@@ -496,6 +504,4 @@ export const tripData = {
       reminder: "記得整理行李！感謝東北的美好回憶",
     },
   ],
-
-
 };

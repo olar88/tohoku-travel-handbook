@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 import '../styles/DayCard.css';
+import { useTohokuWeather } from '../wheatherAPI/hooks/useTohokuWeather';
+import { CuteWeatherCard } from './WeatherCard';
 
 interface Activity {
   time: string;
@@ -12,6 +14,7 @@ interface DayCardData {
   day: number;
   date: string;
   title: string;
+  weatherLocationId: string[];
   accommodation: string;
   highlight: string;
   activities: Activity[];
@@ -24,6 +27,8 @@ interface DayCardProps {
 }
 
 const DayCard: FC<DayCardProps> = ({ data }) => {
+  const { weatherData, loading } = useTohokuWeather();
+
   const getDayColor = (day: number): string => {
     if (day <= 2) return 'aomori'; // 青森
     if (day === 3) return 'hachimanai'; // 八甲田
@@ -41,6 +46,22 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
       <div className="day-header">
         <div className="day-number">Day {data.day}</div>
         <div className="day-date">{data.date}</div>
+
+        <div className="day-wheather">
+           {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+             {/* Loading 骨架屏 - 也要很可愛 */}
+                <div className="h-[40px] w-[80px] bg-stone-100 rounded-[2rem] animate-pulse border-4 border-dashed border-stone-200"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-12">
+            {weatherData.filter(weather => data.weatherLocationId && data.weatherLocationId.includes(weather.locationId)).map((weather) => (
+              <CuteWeatherCard key={weather.locationId} data={weather} />
+            ))}
+          </div>
+        )}
+         
+        </div>
       </div>
 
       <div className="day-title">
