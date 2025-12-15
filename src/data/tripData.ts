@@ -434,7 +434,6 @@ export const tripData = {
       accommodationGoogleMap: "https://maps.app.goo.gl/T16Rhv8ecs5D6xZ18",
       highlight: "山寺、銀山溫泉古鎮",
       activities: [
-
         {
           time: "08:00",
           activity: "起床！",
@@ -454,7 +453,7 @@ export const tripData = {
           time: "11:00",
           activity: "抵達銀山溫泉古鎮",
           note: "時光凝結的溫泉街",
-          warning: '需搭乘接駁公車上去'
+          warning: "需搭乘接駁公車上去",
         },
         {
           time: "12:00",
@@ -496,7 +495,7 @@ export const tripData = {
       title: "返回台灣 ✈️",
       weatherLocationId: ["sendai"],
       accommodation: "Sweet Home",
-      accommodationGoogleMap: "",
+      accommodationGoogleMap: undefined,
       highlight: "返程",
       activities: [
         {

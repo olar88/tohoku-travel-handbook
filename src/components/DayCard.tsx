@@ -50,12 +50,12 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
 
         <div className="day-wheather">
            {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid gap-8">
              {/* Loading 骨架屏 - 也要很可愛 */}
                 <div className="h-[40px] w-[80px] bg-stone-100 rounded-[2rem] animate-pulse border-4 border-dashed border-stone-200"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-12">
+          <div className="grid grid-cols-2 gap-5 pb-12 justify-end">
             {weatherData.filter(weather => data.weatherLocationId && data.weatherLocationId.includes(weather.locationId)).map((weather) => (
               <CuteWeatherCard key={weather.locationId} data={weather} />
             ))}
