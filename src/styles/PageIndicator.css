@@ -282,8 +282,9 @@ select.form-control {
   color: var(--color-text-secondary);
   position: absolute;
   bottom: var(--space-10);
-  right: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
 }
 
 .page-count {
@@ -331,6 +332,9 @@ select.form-control {
     padding-top: 0;
     padding-bottom: var(--space-8);
     font-size: var(--font-size-xs);
+    right: 0;
+    left: 0;
+    transform: translateX(0%);
   }
 
   .page-count {
