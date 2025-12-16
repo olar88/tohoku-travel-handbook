@@ -142,11 +142,27 @@ export const tripData = {
           time: "17:00",
           activity: "晚餐：Osanai 烤扇貝",
           note: "青森當地新鮮海味",
+          tags: [
+            {
+              lable: "🦪 Osanai 烤扇貝",
+              url: "https://notion.so/2adf967c041e80a5b78ef63e6044300f?pvs=25",
+            },
+          ],
         },
         {
           time: "19:00",
           activity: "晚間娛樂：Jazz bar",
           note: "享受爵士樂的愜意氛圍",
+          tags: [
+            {
+              lable: "🎺 Live cafe bar Atom",
+              url: "https://maps.app.goo.gl/bTg5cRM5woDsGwu99",
+            },
+            {
+              lable: "🎺 DJ Bar SOUL.SOUL",
+              url: "https://maps.app.goo.gl/m5bmmjCNcrLckr4t5",
+            },
+          ],
         },
       ],
       icons: ["🛬", "🦪", "🎷"],
@@ -185,6 +201,12 @@ export const tripData = {
           time: "18:00",
           activity: "晚餐：十和田市烤肉",
           note: "美味日式燒肉",
+          tags: [
+            {
+              lable: "🥩 燒肉 牛楽館",
+              url: "https://www.notion.so/298f967c041e81c1a6bccf3839dce7f9",
+            },
+          ],
         },
         {
           time: "21:15",
@@ -208,6 +230,12 @@ export const tripData = {
           time: "10:00",
           activity: "開車前往八甲田",
           warning: "需排隊購票，纜車15:40截止",
+          tags: [
+            {
+              lable: "八甲田",
+              url: "https://www.notion.so/298f967c041e8099a5dedc86d1ef5990",
+            },
+          ],
         },
         {
           time: "15:00",
@@ -228,19 +256,49 @@ export const tripData = {
           time: "18:00",
           activity: "晚餐：八方餃子、串乃助(串燒)",
           note: "入住的餃子館本身也是知名美食！",
+          tags: [
+            {
+              lable: "🍻 串乃助",
+              url: "https://www.notion.so/2b4f967c041e8015af5ae55ca116cbeb",
+            },
+          ],
         },
         {
           time: "19:00",
           activity: "體驗大浴場",
           note: "在地生活體驗",
+          tags: [
+            {
+              lable: "♨️ 長寿の湯",
+              url: "https://www.notion.so/2b0f967c041e8158a49fcc728313b638",
+            },
+            {
+              lable: "♨️ 温泉みちのく",
+              url: "https://www.notion.so/2b0f967c041e81569065e1cbe88620fc",
+            },
+            {
+              lable: "♨️ Midori Onsen",
+              url: "https://www.notion.so/Midori-Onsen-2b0f967c041e80098fddd15be72e0151",
+            }
+          ],
         },
         {
           time: "20:00",
           activity: "晚間娛樂：Live Bar",
           note: "現場音樂伴隨",
+          tags: [
+            {
+              lable: "🎵 レコード酒場EG",
+              url: "https://www.notion.so/EG-2b0f967c041e80ffb3d3eb6b05f84fbe",
+            },
+            {
+              lable: "🎵 パワーステーションA7 ",
+              url: "https://www.notion.so/Powerstation-A7-2b0f967c041e8021b4b7c7e1c235de93?pvs=21",
+            },
+          ],
         },
       ],
-      icons: ["☃️", "🚂", "🥟", "🎵"],
+      icons: ["☃️", "🚂", "🥟", "♨️", "🎵"],
       reminder: "纜車15:40截止！需排隊購票",
     },
     {
@@ -265,14 +323,25 @@ export const tripData = {
         },
         {
           time: "12:45",
-          activity: "抵達盛岡",
+          activity: "抵達盛岡，飯店check-in",
           note: "抵達盛岡市區，稍作休息",
         },
         {
-          time: "13:30",
+          time: "14:00",
+          activity: "城跡公園",
+          note: "眺望盛岡市景",
+        },
+        {
+          time: "16:00",
           activity: "小岩井農場",
-          note: "農場內午餐：鐮倉 GyuGyu 涮涮鍋",
-          warning: "冬季需預約",
+          note: "農場內午晚餐",
+          warning: "冬季接駁車需注意！15:20、16:50",
+          tags: [
+            {
+              lable: "🌾 小岩井農場",
+              url: "https://www.notion.so/298f967c041e80739372dccdf62a6e0a?source=copy_link",
+            },
+          ],
         },
         {
           time: "14:00",
@@ -280,24 +349,25 @@ export const tripData = {
           note: "雪地中的牧場景緻",
         },
         {
-          time: "16:00",
-          activity: "城跡公園",
-          note: "眺望盛岡市景",
+          time: "20:00",
+          activity: "小岩井農場回程",
+          warning: "冬季接駁車需注意！20:00",
         },
         {
-          time: "17:00",
-          activity: "回飯店check-in",
-          note: "稍作休息",
-        },
-        {
-          time: "18:30",
+          time: "20:30",
           activity: "晚餐：盛岡蕎麥麵",
           note: "盛岡在地美食代表，吃飽去超商買生魚片🍣",
         },
         {
-          time: "20:00",
+          time: "21:00",
           activity: "晚間娛樂：Live Bar",
           note: "現場音樂伴隨",
+          tags: [
+            {
+              lable: "🎵 MUSIC + BAR crates",
+              url: "https://www.notion.so/MUSIC-BAR-crates-2b0f967c041e80cb8201d46aad9f0e66",
+            },
+          ],
         },
       ],
       icons: ["🍣", "🍜", "🐮", "❄️", "🎵"],
@@ -387,14 +457,25 @@ export const tripData = {
         },
         {
           time: "10:30",
-          activity: "藏王溫泉泡溫泉",
+          activity: "藏王溫泉泡湯 ♨️",
           note: "八甲田沒看到樹冰就去藏王看",
           warning: "最後入場時間15:30",
+          tags: [
+            {
+              lable: "♨️ 泡湯 三治郎",
+              url: "https://www.notion.so/2a1f967c041e808198a6ed1dac9bead4?pvs=25",
+            },
+          ],
         },
         {
           time: "12:30",
           activity: "藏王溫泉午餐",
-          note: "烏龍麵",
+          tags: [
+            {
+              lable: "🍜 Hanamizuki 定食",
+              url: "https://www.notion.so/Hanamizuki-2b6f967c041e8062ba47d584c0097842",
+            },
+          ],
         },
         {
           time: "13:30",
@@ -420,6 +501,12 @@ export const tripData = {
           time: "18:00",
           activity: "Shopping 🛍️",
           note: "逛街，晚餐：夜ノ焼魚",
+          tags: [
+            {
+              lable: "🍜 夜ノ焼魚",
+              url: "https://www.notion.so/Cho-chomusubi-2adf967c041e80e086ebf4a2d9f30539",
+            },
+          ],
         },
       ],
       icons: ["🦊", "♨️", "❄️", "🛍️", "🍻"],
@@ -448,6 +535,12 @@ export const tripData = {
           time: "10:00",
           activity: "山形市漫步",
           note: "午餐時間-拉麵",
+          tags: [
+            {
+              lable: "🍜 拉麵",
+              url: "https://www.notion.so/2b4f967c041e805fa546d6ec22c21ad1",
+            },
+          ],
         },
         {
           time: "11:00",
@@ -459,6 +552,12 @@ export const tripData = {
           time: "12:00",
           activity: "散步溫泉街、品嚐布丁",
           warning: "酒茶房クリエ 只收現金",
+          tags: [
+            {
+              lable: "🍰 酒茶房",
+              url: "https://www.notion.so/2b4f967c041e8026aef0cc573215dbbf",
+            },
+          ],
         },
         {
           time: "14:00",
@@ -474,6 +573,12 @@ export const tripData = {
           time: "16:00",
           activity: "前往山形市區",
           note: "晚餐-米澤牛壽喜燒",
+          tags: [
+            {
+              lable: "🥩 米澤牛寿喜燒",
+              url: "https://www.notion.so/2a6f967c041e80a195dacc937ca305d8",
+            },
+          ],
         },
         {
           time: "18:00",

@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import '../styles/DayCard.css';
 import { useTohokuWeather } from '../wheatherAPI/hooks/useTohokuWeather';
 import { CuteWeatherCard } from './WeatherCard';
-import { AlertCircle, Bed, Sun } from 'lucide-react';
+import { AlertCircle, Bed, ExternalLink, Sun } from 'lucide-react';
 import { MyFooter } from './Footer';
 
 interface Activity {
@@ -10,6 +10,10 @@ interface Activity {
   activity: string;
   note?: string;
   warning?: string;
+  tags?: {
+    lable: string;
+    url: string;
+  }[];
 }
 
 interface DayCardData {
@@ -122,6 +126,31 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
 
                   {act.note && (
                     <p className="text-sm text-gray-500 mt-1 font-handwriting">{act.note}</p>
+                  )}
+
+                  {/* Tags Section - New Feature */}
+                  {act.tags && act.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {act.tags.map((tag, tIdx) => (
+                        <a
+                          key={tIdx}
+                          href={tag.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="
+                              inline-flex items-center gap-1.5 px-2 py-1 
+                              bg-[#fff] border border-[#d7ccc8] rounded-md shadow-sm
+                              text-xs text-[#5d4037] font-medium 
+                              hover:bg-[#efebe9] hover:border-[#8d6e63] hover:text-[#3e2723] 
+                              transition-all cursor-pointer no-underline
+                              group/tag
+                            "
+                        >
+                          <ExternalLink size={10} className="text-[#a1887f] group-hover/tag:text-[#6d4c41]" />
+                          {tag.lable}
+                        </a>
+                      ))}
+                    </div>
                   )}
 
                   {act.warning && (
