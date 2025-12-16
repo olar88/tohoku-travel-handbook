@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import '../styles/TripOverview.css';
 import type { OverviewData } from '../data/tripData';
+import { MyFooter } from './Footer';
 
 
 
@@ -58,6 +59,8 @@ const TripOverview: FC<TripOverviewProps> = ({ data }) => {
           </ul>
         </div>
       </div>
+      {/* Footer */}
+      <MyFooter />
     </div>
   );
 };

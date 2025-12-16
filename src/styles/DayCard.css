@@ -97,43 +97,31 @@ select.form-control {
 }
 
 .status--success {
-  background-color: rgba(
-    var(--color-success-rgb, 33, 128, 141),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-success-rgb, 33, 128, 141),
+      var(--status-bg-opacity));
   color: var(--color-success);
-  border: 1px solid
-    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
 }
 
 .status--error {
-  background-color: rgba(
-    var(--color-error-rgb, 192, 21, 47),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-error-rgb, 192, 21, 47),
+      var(--status-bg-opacity));
   color: var(--color-error);
-  border: 1px solid
-    rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
 }
 
 .status--warning {
-  background-color: rgba(
-    var(--color-warning-rgb, 168, 75, 47),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-warning-rgb, 168, 75, 47),
+      var(--status-bg-opacity));
   color: var(--color-warning);
-  border: 1px solid
-    rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
 }
 
 .status--info {
-  background-color: rgba(
-    var(--color-info-rgb, 98, 108, 113),
-    var(--status-bg-opacity)
-  );
+  background-color: rgba(var(--color-info-rgb, 98, 108, 113),
+      var(--status-bg-opacity));
   color: var(--color-info);
-  border: 1px solid
-    rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
+  border: 1px solid rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
 }
 
 /* Container layout */
@@ -281,8 +269,7 @@ select.form-control {
 
 @font-face {
   font-family: "FKGroteskNeue";
-  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2")
-    format("woff2");
+  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2") format("woff2");
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
@@ -292,11 +279,9 @@ select.form-control {
   padding-bottom: 200px;
   overflow-y: auto;
   animation: fadeIn calc(var(--duration-normal) * 3.2) var(--ease-standard);
-  background: linear-gradient(
-    to bottom,
-    var(--color-background),
-    var(--color-surface)
-  );
+  background: linear-gradient(to bottom,
+      var(--color-background),
+      var(--color-surface));
 }
 
 .day-header {
@@ -500,6 +485,7 @@ select.form-control {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -531,7 +517,7 @@ select.form-control {
 @media (max-width: 480px) {
   .day-card {
     padding: var(--space-16);
-    padding-bottom: 200px;
+    padding-bottom: 20px;
   }
 
   .day-header {
@@ -543,10 +529,12 @@ select.form-control {
     margin-bottom: var(--space-16);
     padding-bottom: var(--space-12);
   }
+
   .day-wheather {
     margin-top: var(--space-8);
     margin-left: 0;
   }
+
   .day-number {
     font-size: var(--font-size-2xl);
   }

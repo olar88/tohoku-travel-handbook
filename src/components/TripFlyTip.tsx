@@ -1,5 +1,6 @@
 import type { OverviewData } from "../data/tripData";
 import "../styles/TripFlyTip.css";
+import { MyFooter } from "./Footer";
 
 
 
@@ -128,6 +129,8 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
           </p>
         </div>
       </div>
+      {/* Footer */}
+      <MyFooter />
     </div>
   );
 }

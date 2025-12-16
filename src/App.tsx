@@ -1,4 +1,4 @@
-import { useState, type JSX } from 'react';
+import React, { useState, type JSX } from 'react';
 import CoverPage from './components/CoverPage';
 // import TripOverview from './components/TripOverview';
 import DayCard from './components/DayCard';
@@ -7,6 +7,7 @@ import PageIndicator from './components/PageIndicator';
 import './styles/App.css';
 import { tripData } from './data/tripData';
 import TripFlyTip from './components/TripFlyTip';
+import { Coffee, Heart, Snowflake } from 'lucide-react';
 
 interface PageData {
   type: 'cover' | 'overview' | 'day';
@@ -47,13 +48,17 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="app">
-      <div className="app-container">
-        {renderPage()}
-        <Navigation onNext={handleNext} onPrev={handlePrev} />
-        <PageIndicator current={currentPage + 1} total={totalPages} />
+    <React.Fragment>
+      <div className="app">
+        <div className="app-container">
+          {renderPage()}
+
+          <Navigation onNext={handleNext} onPrev={handlePrev} />
+          <PageIndicator current={currentPage + 1} total={totalPages} />
+        </div>
+
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
