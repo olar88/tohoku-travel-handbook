@@ -7,7 +7,6 @@ import PageIndicator from './components/PageIndicator';
 import './styles/App.css';
 import { tripData } from './data/tripData';
 import TripFlyTip from './components/TripFlyTip';
-import { Coffee, Heart, Snowflake } from 'lucide-react';
 
 interface PageData {
   type: 'cover' | 'overview' | 'day';
