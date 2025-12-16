@@ -1,8 +1,8 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import '../styles/DayCard.css';
 import { useTohokuWeather } from '../wheatherAPI/hooks/useTohokuWeather';
 import { CuteWeatherCard } from './WeatherCard';
-import { AlertCircle, Bed, Coffee, Heart, Snowflake, Sun } from 'lucide-react';
+import { AlertCircle, Bed, Sun } from 'lucide-react';
 import { MyFooter } from './Footer';
 
 interface Activity {
