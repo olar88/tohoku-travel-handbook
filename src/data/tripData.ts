@@ -117,9 +117,9 @@ export const tripData = {
     {
       day: 1,
       date: "2026年1月8日(四)",
-      title: "抵達青森 🛬",
+      title: "抵達青森 🛬 🍎 🍎 🍎",
       weatherLocationId: ["aomori"],
-      accommodation: "Art Hotel",
+      accommodation: "Art Hotel 🍎 ",
       accommodationGoogleMap: "https://maps.app.goo.gl/FydjxYB5Ji63ygZq9",
       highlight: "抵達日本、青森市區初探",
       activities: [
@@ -130,8 +130,8 @@ export const tripData = {
         },
         {
           time: "15:00",
-          activity: "搭乘 JR 前往青森",
-          note: "機場巴士 → 新青森站 → JR奧羽本線",
+          activity: "搭乘 巴士 🚌 前往青森",
+          note: "機場巴士 → 青森站",
         },
         {
           time: "16:00",
@@ -140,6 +140,17 @@ export const tripData = {
         },
         {
           time: "17:00",
+          activity: "青森港逛逛",
+          note: "A - Factory 青森港散步",
+          tags: [
+            {
+              lable: "🍎 A - Factory",
+              url: "https://www.notion.so/A-FACTORY-2ccf967c041e80b3b312c73d7a578bef",
+            },
+          ],
+        },
+        {
+          time: "18:30",
           activity: "晚餐：Osanai 烤扇貝",
           note: "青森當地新鮮海味",
           tags: [
@@ -150,7 +161,7 @@ export const tripData = {
           ],
         },
         {
-          time: "19:00",
+          time: "20:00",
           activity: "晚間娛樂：Jazz bar",
           note: "享受爵士樂的愜意氛圍",
           tags: [
@@ -162,10 +173,14 @@ export const tripData = {
               lable: "🎺 DJ Bar SOUL.SOUL",
               url: "https://maps.app.goo.gl/m5bmmjCNcrLckr4t5",
             },
+            {
+              lable: "🍓 Universe Supermarket",
+              url: "https://maps.app.goo.gl/iLi3vjYxjZ55mxEi6",
+            },
           ],
         },
       ],
-      icons: ["🛬", "🦪", "🎷"],
+      icons: ["🛬", "🍎", "🍓", "🦪", "🎷"],
       reminder: null,
     },
     {
@@ -173,7 +188,7 @@ export const tripData = {
       date: "2026年1月9日(五)",
       title: "冰瀑奇觀 ❄️",
       weatherLocationId: ["oirase"],
-      accommodation: "奧入瀨溪流飯店",
+      accommodation: "奧入瀨溪流飯店 ❄️",
       accommodationGoogleMap: "https://maps.app.goo.gl/zaWScprCAxtqxpdJ9",
       highlight: "十和田神社、奧入瀨溪流冰瀑燈光秀",
       activities: [
@@ -222,7 +237,7 @@ export const tripData = {
       date: "2026年1月10日(六)",
       title: "樹冰與八戶 ☃️",
       weatherLocationId: ["hakkoda", "hachinohe"],
-      accommodation: "八方餃子",
+      accommodation: "八方餃子 🥟",
       accommodationGoogleMap: "https://maps.app.goo.gl/8sfigkxq8sduU3UU7",
       highlight: "八甲田山樹冰、探索八戶",
       activities: [
