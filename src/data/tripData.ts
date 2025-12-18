@@ -513,18 +513,29 @@ export const tripData = {
           note: "還車，稍作休息",
         },
         {
-          time: "18:00",
-          activity: "Shopping 🛍️",
-          note: "逛街，晚餐：夜ノ焼魚",
+          time: "17:00",
+          activity: "點心：關東煮🍢",
+          note: "吃關東煮暖暖胃",
           tags: [
             {
-              lable: "🍜 夜ノ焼魚",
+              lable: "🍢 Oden Sankichi",
+              url: "https://www.notion.so/Oden-Sankichi-2cdf967c041e805186e0cf36cb0bde0d",
+            },
+          ],
+        },
+        {
+          time: "18:00",
+          activity: "Shopping 🛍️",
+          note: "逛街！晚餐：夜ノ焼魚",
+          tags: [
+            {
+              lable: "🍤 夜ノ焼魚",
               url: "https://www.notion.so/Cho-chomusubi-2adf967c041e80e086ebf4a2d9f30539",
             },
           ],
         },
       ],
-      icons: ["🦊", "♨️", "❄️", "🛍️", "🍻"],
+      icons: ["🦊", "♨️", "❄️", "🛍️", "🍤"],
       reminder: "狐狸村最後入場15:30！",
     },
     {
