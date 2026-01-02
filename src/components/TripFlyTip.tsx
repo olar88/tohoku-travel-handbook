@@ -1,10 +1,9 @@
 import type { OverviewData } from "../data/tripData";
 import "../styles/TripFlyTip.css";
 import { MyFooter } from "./Footer";
+import { PackinSection } from "./PackingSection";
 
-
-
-interface TripFlyTipProps {
+export interface TripFlyTipProps {
   data: OverviewData;
 }
 
@@ -93,31 +92,7 @@ export default function TripFlyTip({ data }: TripFlyTipProps) {
       </div>
 
       {/* 必須攜帶物品區 */}
-      <div className="packing-section">
-        <h2 className="section-title">📜出發前確認清單</h2>
-
-        <div className="packing-grid">
-          {data.packingList.map((category, index) => (
-            <div key={index} className="packing-card">
-              <div className="category-header">
-                <span className="category-icon">{category.icon}</span>
-                <h3 className="category-name">{category.category}</h3>
-              </div>
-
-              <ul className="items-list">
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="packing-item">
-                    <span className="checkbox">
-                      <img src='/checkIcon.png' alt="" width={20} height={20} />
-                    </span>
-                    <span className="item-text">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+      <PackinSection data={data} />
 
       {/* 溫馨提示 */}
       <div className="tips-section">

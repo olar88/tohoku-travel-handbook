@@ -1,3 +1,40 @@
+interface Activity {
+  time: string;
+  activity: string;
+  note?: string;
+  warning?: string;
+  tags?: {
+    lable: string;
+    url: string;
+  }[];
+}
+
+interface NightlyCheckItem {
+  id: string;
+  text: string;
+  priority?: "high" | "medium" | "low";
+}
+
+export interface DayData {
+  day: number;
+  date: string;
+  title: string;
+  weatherLocationId: string[];
+  accommodation: string;
+  accommodationGoogleMap?: string;
+  highlight: string;
+  activities: Activity[];
+  icons?: string[];
+  reminder?: string | null;
+  nightlyCheck?: {
+    weather: boolean;
+    transport: boolean;
+    reservations: boolean;
+    equipment: boolean;
+    customItems?: NightlyCheckItem[];
+  };
+}
+
 export interface OverviewData {
   regions: string;
   flights: {
@@ -6,18 +43,22 @@ export interface OverviewData {
       flightNumber: string;
       departure: string;
       departureTime: string;
+      departureAirport: string;
       arrival: string;
       arrivalTime: string;
-      duration: string;
+      arrivalAirport: string;
+      duration?: string;
     };
     return: {
       airline: string;
       flightNumber: string;
       departure: string;
       departureTime: string;
+      departureAirport: string;
       arrival: string;
       arrivalTime: string;
-      duration: string;
+      arrivalAirport: string;
+      duration?: string;
     };
     outboundFlightSummary: string;
     returnFlightSummary: string;
@@ -30,7 +71,13 @@ export interface OverviewData {
   }[];
 }
 
-export const tripData = {
+export interface TripData {
+  coverPage: Record<string, unknown>;
+  overview: OverviewData;
+  days: DayData[];
+}
+
+export const tripData: TripData = {
   coverPage: {},
 
   overview: {
@@ -64,7 +111,7 @@ export const tripData = {
       {
         category: "證件",
         icon: "💳️",
-        items: ["護照", "台灣駕照 (國際駕照)", "健保卡", "信用卡/現金"],
+        items: ["護照", "台灣駕照", "國際駕照", "健保卡", "信用卡", "日幣現金"],
       },
       {
         category: "衣著",
@@ -72,7 +119,7 @@ export const tripData = {
         items: [
           "羽絨衣",
           "厚毛衣",
-          "加熱衣",
+          "發熱衣",
           "厚褲子",
           "雪靴",
           "厚襪子",
@@ -84,18 +131,20 @@ export const tripData = {
       {
         category: "保暖用品",
         icon: "❄️",
-        items: ["暖暖包", "保溫杯", "口罩", "護唇膏"],
+        items: ["保溫杯", "口罩", "耳罩"],
       },
       {
         category: "盥洗用品",
         icon: "🧴",
         items: [
-          "保濕乳液",
+          "卸妝油",
+          "洗面乳",
+          "化妝水",
+          "乳液",
           "護手霜",
-          "唇膏",
+          "護唇膏",
           "防曬乳",
           "牙刷牙膏",
-          "洗面乳",
           "化妝品",
         ],
       },
@@ -108,6 +157,9 @@ export const tripData = {
           "藥品 (感冒藥、腸胃藥)",
           "墨鏡❗❗",
           "自拍桿",
+          "磁吸夾",
+          "傻瓜相機 📷",
+          "拍立得 📸",
         ],
       },
     ],
@@ -182,6 +234,19 @@ export const tripData = {
       ],
       icons: ["🛬", "🍎", "🍓", "🦪", "🎷"],
       reminder: null,
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: false,
+        customItems: [
+          {
+            id: "d1-rental_car",
+            text: "確認明天：租車單、地點",
+            priority: "high",
+          },
+        ],
+      },
     },
     {
       day: 2,
@@ -230,7 +295,25 @@ export const tripData = {
         },
       ],
       icons: ["🚗", "♨️", "❄️", "✨"],
-      reminder: "現場支付現金3000¥！",
+      reminder: "冰瀑燈光秀現場支付現金3000¥！",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: true,
+        customItems: [
+          {
+            id: "d2-jr_schedule",
+            text: "確認JR往八戶時刻表與劃位",
+            priority: "high",
+          },
+          {
+            id: "d2-hakkoda_time",
+            text: "🍎 重要：確認八甲田纜車營運時間",
+            priority: "high",
+          },
+        ],
+      },
     },
     {
       day: 3,
@@ -256,6 +339,7 @@ export const tripData = {
           time: "15:00",
           activity: "還車",
           note: "結束上午自駕",
+          warning: "先購票，新青森往八戶 ❗️需劃位❗️",
         },
         {
           time: "15:59",
@@ -294,7 +378,7 @@ export const tripData = {
             {
               lable: "♨️ Midori Onsen",
               url: "https://www.notion.so/Midori-Onsen-2b0f967c041e80098fddd15be72e0151",
-            }
+            },
           ],
         },
         {
@@ -315,6 +399,24 @@ export const tripData = {
       ],
       icons: ["☃️", "🚂", "🥟", "♨️", "🎵"],
       reminder: "纜車15:40截止！需排隊購票",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: false,
+        customItems: [
+          {
+            id: "d3-morioka_train",
+            text: "確認往盛岡JR時刻 ❗️需劃位❗️",
+            priority: "high",
+          },
+          {
+            id: "d3-hachinohe_food",
+            text: "確認八食中心營業時間",
+            priority: "medium",
+          },
+        ],
+      },
     },
     {
       day: 4,
@@ -386,7 +488,35 @@ export const tripData = {
         },
       ],
       icons: ["🍣", "🍜", "🐮", "❄️", "🎵"],
-      reminder: "小岩井農場涮涮鍋需預約",
+      reminder: "小岩井農場接駁車時間注意！",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: true,
+        customItems: [
+          {
+            id: "d4-train_schedule",
+            text: "確認【盛岡往一關】與【一關往仙台】JR時刻 ❗️需劃位❗️",
+            priority: "high",
+          },
+          {
+            id: "d4-train_to_geibikei_schedule",
+            text: "確認往【一關往猊鼻溪】大肚船線班次",
+            priority: "high",
+          },
+          {
+            id: "d4-boat_schedule",
+            text: "確認猊鼻溪遊船班次",
+            priority: "medium",
+          },
+          {
+            id: "d4-warm_clothes",
+            text: "準備保暖衣物(遊船)",
+            priority: "medium",
+          },
+        ],
+      },
     },
     {
       day: 5,
@@ -450,6 +580,29 @@ export const tripData = {
       ],
       icons: ["🚤", "⛰️", "❄️", "🥩"],
       reminder: "遊船營運時間09:30-16:30",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: false,
+        customItems: [
+          {
+            id: "d5-rental_car",
+            text: "確認明天：租車單、地點",
+            priority: "high",
+          },
+          {
+            id: "d5-zao_time",
+            text: "確認藏王溫泉最後入場時間 ♨️",
+            priority: "high",
+          },
+          {
+            id: "d5-fox_village",
+            text: "確認狐狸村開放時間 🦊",
+            priority: "high",
+          },
+        ],
+      },
     },
     {
       day: 6,
@@ -469,6 +622,7 @@ export const tripData = {
           time: "09:30",
           activity: "租車前往狐狸村",
           note: "租車去狐狸村~車程約 50 min",
+          warning: "租車時確認最晚還車時間",
         },
         {
           time: "10:30",
@@ -537,6 +691,30 @@ export const tripData = {
       ],
       icons: ["🦊", "♨️", "❄️", "🛍️", "🍤"],
       reminder: "狐狸村最後入場15:30！",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: true,
+        customItems: [
+          {
+            id: "d6-rental_car",
+            text: "確認明天：租車單、地點",
+            priority: "high",
+          },
+          {
+            id: "d6-shuttle_bus",
+            text: "確認銀山溫泉接駁公車時間，預先購買車票 🚌 (17:00 前)",
+            priority: "high",
+          },
+          { id: "d6-ice_cleats", text: "準備鞋爪(山寺結冰)", priority: "high" },
+          {
+            id: "d6-cash_pudding",
+            text: "準備現金買布丁 🍮",
+            priority: "medium",
+          },
+        ],
+      },
     },
     {
       day: 7,
@@ -619,6 +797,25 @@ export const tripData = {
       ],
       icons: ["⛩️", "🏮", "♨️", "❄️", "🥩", "🛍️"],
       reminder: "山寺路面結冰，務必帶鞋爪！布丁只收現金",
+      nightlyCheck: {
+        weather: true,
+        transport: true,
+        reservations: false,
+        equipment: false,
+        customItems: [
+          {
+            id: "d7-flight_check",
+            text: "🍎 確認明天班機時間，線上報到 🛫",
+            priority: "high",
+          },
+          {
+            id: "d7-luggage",
+            text: "整理行李，確定飯店可寄放行李",
+            priority: "high",
+          },
+          { id: "d7-souvenirs", text: "確認紀念品清單", priority: "medium" },
+        ],
+      },
     },
     {
       day: 8,

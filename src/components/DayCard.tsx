@@ -1,9 +1,10 @@
-import { type FC } from 'react';
-import '../styles/DayCard.css';
-import { useTohokuWeather } from '../wheatherAPI/hooks/useTohokuWeather';
-import { CuteWeatherCard } from './WeatherCard';
-import { AlertCircle, Bed, ExternalLink, Sun } from 'lucide-react';
-import { MyFooter } from './Footer';
+import { type FC } from "react";
+import "../styles/DayCard.css";
+import { useTohokuWeather } from "../wheatherAPI/hooks/useTohokuWeather";
+import { CuteWeatherCard } from "./WeatherCard";
+import { AlertCircle, Bed, ExternalLink, Sun } from "lucide-react";
+import { MyFooter } from "./Footer";
+import NightlyChecklist from "./NightlyChecklist";
 
 interface Activity {
   time: string;
@@ -31,31 +32,39 @@ interface DayCardData {
 
 interface DayCardProps {
   data: DayCardData;
+  nextDayData?: DayCardData;
 }
 
-const DayCard: FC<DayCardProps> = ({ data }) => {
+const DayCard: FC<DayCardProps> = ({ data, nextDayData }) => {
   const { weatherData, loading } = useTohokuWeather();
 
   const getDayColor = (day: number): string => {
-    if (day <= 2) return 'aomori'; // 青森
-    if (day === 3) return 'hachimanai'; // 八甲田
-    if (day === 4) return 'morioka'; // 盛岡
-    if (day === 5) return 'ichinoseki'; // 一関
-    if (day === 6) return 'miyagi-zao'; // 狐狸村 & 藏王
-    if (day === 7) return 'yamadera'; // 山寺 & 銀山
-    return 'sendai'; // 仙台
+    if (day <= 2) return "aomori"; // 青森
+    if (day === 3) return "hachimanai"; // 八甲田
+    if (day === 4) return "morioka"; // 盛岡
+    if (day === 5) return "ichinoseki"; // 一関
+    if (day === 6) return "miyagi-zao"; // 狐狸村 & 藏王
+    if (day === 7) return "yamadera"; // 山寺 & 銀山
+    return "sendai"; // 仙台
   };
 
   const regionColor = getDayColor(data.day);
   // 隨機便利貼顏色
-  const stickyColors = ['bg-yellow-100', 'bg-blue-100', 'bg-red-100', 'bg-green-100'];
+  const stickyColors = [
+    "bg-yellow-100",
+    "bg-blue-100",
+    "bg-red-100",
+    "bg-green-100",
+  ];
   const stickyColor = stickyColors[data.day % stickyColors.length];
-
 
   return (
     <div className={`day-card day-${regionColor}`}>
-      <div data-region-name='dat-title' className="flex flex-col justify-between items-start mt-2">
-        <div className='w-full flex justify-between items-center'>
+      <div
+        data-region-name="dat-title"
+        className="flex flex-col justify-between items-start mt-2"
+      >
+        <div className="w-full flex justify-between items-center">
           <span className="inline-block px-2 py-1 bg-[#ffa978] text-[#f8f5f2] text-xs font-bold rounded-md tracking-wider">
             DAY {data.day}
           </span>
@@ -64,7 +73,9 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-gray-800 mb-2 font-display">{data.title}</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2 font-display">
+          {data.title}
+        </h3>
       </div>
 
       <div className="day-wheather">
@@ -75,15 +86,19 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-5 pb-12 justify-end">
-            {weatherData.filter(weather => data.weatherLocationId && data.weatherLocationId.includes(weather.locationId)).map((weather) => (
-              <CuteWeatherCard key={weather.locationId} data={weather} />
-            ))}
+            {weatherData
+              .filter(
+                (weather) =>
+                  data.weatherLocationId &&
+                  data.weatherLocationId.includes(weather.locationId)
+              )
+              .map((weather) => (
+                <CuteWeatherCard key={weather.locationId} data={weather} />
+              ))}
           </div>
         )}
-
       </div>
-
-
+     
       {/* Accommodation */}
       <div className="flex items-center text-sm text-gray-600 bg-orange-50 p-2 rounded-lg border border-orange-100">
         <Bed size={16} className="mr-2 text-orange-400" />
@@ -108,11 +123,25 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
         {data.highlight}
       </div>
 
+       {data.reminder && (
+        <div
+          className={`
+                max-w-[60%] rotate-2 transform shadow-md p-2 text-xs font-handwriting text-gray-700 leading-tight ml-auto mb-[-30px] mt-[8px]
+                ${stickyColor} text-center font-bold relative
+              `}
+        >
+          <div className="absolute -top-2 left-1/2 w-8 h-3 bg-[#e5e7eb] opacity-50 -translate-x-1/2"></div>
+          📌 {data.reminder}
+        </div>
+      )}
+
       {/* Timeline Section */}
-      <div className={`
+      <div
+        className={`
         overflow-hidden transition-all duration-500 ease-in-out px-5 pb-5
        max-h-[2000px] opacity-100
-      `}>
+      `}
+      >
         <div className="relative border-l-2 border-dashed border-gray-300 ml-3 my-2 space-y-6">
           {data.activities.map((act, idx) => (
             <div key={idx} className="relative pl-6 group">
@@ -120,12 +149,18 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
               <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#aaddcd] group-hover:border-[#ff8e72] transition-colors shadow-sm"></div>
 
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                <span className="font-mono text-sm font-bold text-gray-400 min-w-[50px]">{act.time}</span>
+                <span className="font-mono text-sm font-bold text-gray-400 min-w-[50px]">
+                  {act.time}
+                </span>
                 <div className="flex-1">
-                  <h4 className="text-base font-bold text-gray-700">{act.activity}</h4>
+                  <h4 className="text-base font-bold text-gray-700">
+                    {act.activity}
+                  </h4>
 
                   {act.note && (
-                    <p className="text-sm text-gray-500 mt-1 font-handwriting">{act.note}</p>
+                    <p className="text-sm text-gray-500 mt-1 font-handwriting">
+                      {act.note}
+                    </p>
                   )}
 
                   {/* Tags Section - New Feature */}
@@ -146,7 +181,10 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
                               group/tag
                             "
                         >
-                          <ExternalLink size={10} className="text-[#a1887f] group-hover/tag:text-[#6d4c41]" />
+                          <ExternalLink
+                            size={10}
+                            className="text-[#a1887f] group-hover/tag:text-[#6d4c41]"
+                          />
                           {tag.lable}
                         </a>
                       ))}
@@ -169,27 +207,23 @@ const DayCard: FC<DayCardProps> = ({ data }) => {
         <div className="mt-6 pt-4 border-t border-gray-100">
           <div className="flex justify-between items-end">
             <div className="flex gap-2 text-xl filter grayscale hover:grayscale-0 transition-all duration-300 cursor-default">
-              {data.icons?.map((icon, i) => <span key={i} title="Day vibe">{icon}</span>)}
+              {data.icons?.map((icon, i) => (
+                <span key={i} title="Day vibe">
+                  {icon}
+                </span>
+              ))}
             </div>
-
-            {data.reminder && (
-              <div className={`
-                max-w-[60%] rotate-2 transform shadow-md p-2 text-xs font-handwriting text-gray-700 leading-tight
-                ${stickyColor} text-center font-bold relative
-              `}>
-                <div className="absolute -top-2 left-1/2 w-8 h-3 bg-[#e5e7eb] opacity-50 -translate-x-1/2"></div>
-                📌 {data.reminder}
-              </div>
-            )}
           </div>
         </div>
       </div>
+
+      {/* Nightly Checklist */}
+      <NightlyChecklist currentDayData={data} nextDayData={nextDayData} />
 
       {/* Footer */}
       <MyFooter />
     </div>
   );
-}
-
+};
 
 export default DayCard;
